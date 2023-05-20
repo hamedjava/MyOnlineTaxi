@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:online_taxi/view/components/form/custom_button.dart';
-import 'package:online_taxi/view/components/form/custom_textformfield.dart';
 import 'package:location_picker_flutter_map/location_picker_flutter_map.dart';
 import 'package:online_taxi/view/screens_pages/order/waiting.dart';
 
@@ -13,7 +11,7 @@ class Index extends StatefulWidget {
 
 class _IndexState extends State<Index> {
   TextEditingController search = TextEditingController();
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  //final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   String textBtn = "انتخاب مبدا";
 
   String mabda = "";
@@ -76,7 +74,7 @@ class _IndexState extends State<Index> {
                                   ScaffoldMessenger.of(context)
                                       .clearMaterialBanners();
                                 },
-                                icon: Icon(Icons.close),
+                                icon: const Icon(Icons.close),
                               ),
                             ],
                           ),
@@ -110,14 +108,14 @@ class _IndexState extends State<Index> {
                                   ScaffoldMessenger.of(context)
                                       .clearMaterialBanners();
                                 },
-                                icon: Icon(Icons.close),
+                                icon: const Icon(Icons.close),
                               ),
                             ],
                           ),
                         );
                       } else {
-                        Navigator.of(context).push(
-                            MaterialPageRoute(builder: (context) => Waiting()));
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const Waiting()));
                       }
                     }),
               )
