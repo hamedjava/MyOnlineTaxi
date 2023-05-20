@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:online_taxi/routes/routes.dart';
+import 'package:lottie/lottie.dart';
 
 class Welcome extends StatefulWidget {
   const Welcome({super.key});
@@ -10,7 +11,7 @@ class Welcome extends StatefulWidget {
 
 class _WelcomeState extends State<Welcome> {
   Future gotToLogin() async {
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 5), () {
       //for remove previews routes
       Navigator.pushNamedAndRemoveUntil(
           context, MyRoutes.login, (context) => false);
@@ -33,6 +34,8 @@ class _WelcomeState extends State<Welcome> {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
+            Lottie.asset('assets/lotties/car_arrived.json',
+                width: 350, height: 350),
             Text(
               "Welcome",
               style: Theme.of(context)

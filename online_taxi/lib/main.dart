@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:online_taxi/home_screen.dart';
 import 'package:online_taxi/routes/routes.dart';
+import 'package:online_taxi/view/screens_pages/auth/welcome.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: const MyHomePage(),
+      home: const Welcome(),
     );
   }
 }
