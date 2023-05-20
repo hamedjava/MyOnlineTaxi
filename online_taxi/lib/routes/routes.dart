@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:online_taxi/home_screen.dart';
 import 'package:online_taxi/view/screens_pages/auth/login.dart';
