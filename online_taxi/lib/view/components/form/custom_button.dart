@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.title, required this.onPressed});
+  const CustomButton(
+      {super.key,
+      required this.title,
+      required this.onPressed,
+      this.onLongPressed});
 
   final String title;
   final Function() onPressed;
-
+  final Function()? onLongPressed;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -18,6 +22,7 @@ class CustomButton extends StatelessWidget {
       width: width / 1.5,
       child: RawMaterialButton(
         onPressed: onPressed,
+        onLongPress: onLongPressed,
         child: Text(
           title,
           style: const TextStyle(color: Colors.white),
