@@ -14,7 +14,7 @@ class _WelcomeState extends State<Welcome> {
     Future.delayed(const Duration(seconds: 5), () {
       //for remove previews routes
       Navigator.pushNamedAndRemoveUntil(
-          context, MyRoutes.login, (context) => false);
+          context, MyRoutes.myhome, (context) => false);
     });
   }
 
