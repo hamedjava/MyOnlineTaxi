@@ -35,9 +35,10 @@ class _WaitingState extends State<Waiting> {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
                     behavior: SnackBarBehavior.floating,
-                    content: Text("برای لغو درخواست نگهدارید.."),
-                    margin: EdgeInsets.only(bottom: 100, left: 25, right: 25),
-                    backgroundColor: Color.fromARGB(101, 0, 0, 0),
+                    content: Text("برای لغو درخواست نگهدارید..",
+                        textDirection: TextDirection.rtl),
+                    margin: EdgeInsets.only(bottom: 80, left: 25, right: 25),
+                    backgroundColor: Color.fromARGB(100, 36, 34, 34),
                   ),
                 );
               },

@@ -2,16 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:online_taxi/home_screen.dart';
 import 'package:online_taxi/view/screens_pages/auth/login.dart';
 import 'package:online_taxi/view/screens_pages/auth/signup.dart';
+import 'package:online_taxi/view/screens_pages/order/find_driver.dart';
 
 class MyRoutes {
   static const String login = '/login';
   static const String signup = '/signup';
   static const String myhome = '/home';
+  static const String findDriver = "/finddirver";
 
   static Map<String, Widget Function(BuildContext)> routes = {
     login: (context) => const Login(),
     myhome: (context) => const MyHomePage(),
     signup: (context) => const Signup(),
+    findDriver: (context) => const FindDriver(),
   };
 }
 
