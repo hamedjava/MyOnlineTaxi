@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_taxi/routes/routes.dart';
 import 'package:online_taxi/view/screens_pages/auth/welcome.dart';
+import 'package:online_taxi/view/screens_pages/order/find_driver.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: const Welcome(),
+      home: const FindDriver(),
     );
   }
 }

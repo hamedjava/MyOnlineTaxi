@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:online_taxi/routes/routes.dart';
 import 'package:online_taxi/view/components/form/custom_button.dart';
 
 class Waiting extends StatefulWidget {
@@ -9,6 +10,17 @@ class Waiting extends StatefulWidget {
 }
 
 class _WaitingState extends State<Waiting> {
+  @override
+  void initState() {
+    super.initState();
+    find_driver = true;
+    setState(() {
+      Navigator.pushNamed(context, MyRoutes.findDriver);
+    });
+  }
+
+  bool find_driver = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +34,10 @@ class _WaitingState extends State<Waiting> {
               padding: EdgeInsets.all(8.0),
               child: CircularProgressIndicator.adaptive(),
             ),
-            Text("درحال پیدا کردن راننده..."),
+            Text(
+              "درحال پیدا کردن راننده...",
+              textDirection: TextDirection.rtl,
+            ),
           ],
         ),
       ),

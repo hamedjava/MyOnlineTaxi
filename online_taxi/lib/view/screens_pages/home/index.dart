@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:location_picker_flutter_map/location_picker_flutter_map.dart';
-import 'package:online_taxi/routes/routes.dart';
-import 'package:online_taxi/view/screens_pages/order/find_driver.dart';
 import 'package:online_taxi/view/screens_pages/order/waiting.dart';
 
 class Index extends StatefulWidget {
