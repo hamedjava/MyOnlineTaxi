@@ -15,35 +15,62 @@ class _FindDriverState extends State<FindDriver> {
       bottomSheet: Container(
         color: Colors.black87,
         width: MediaQuery.of(context).size.width,
-        height: 130,
-        child: const Row(
-          mainAxisAlignment: MainAxisAlignment.end,
+        height: 200,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Padding(
+            const Padding(
               padding: EdgeInsets.all(8.0),
-              child: Column(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "حامد پویان فر",
+                    "پراید سفید",
                     style: TextStyle(color: Colors.white),
                   )
                 ],
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Column(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Icon(
-                    Icons.account_circle_rounded,
-                    color: Colors.red,
-                  )
+                  Padding(
+                    padding: const EdgeInsets.only(right: 50),
+                    child: Image.asset(
+                      'assets/images/pelak.jpg',
+                      width: 130,
+                      height: 60,
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(right: 8.0),
+                    child: Text(
+                      "حامد پویان فر",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(right: 8.0),
+                    child: Icon(
+                      Icons.account_circle_rounded,
+                      color: Colors.red,
+                    ),
+                  ),
                 ],
               ),
             ),
-            Padding(
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [],
+              ),
+            ),
+            const Padding(
               padding: EdgeInsets.all(2.0),
-              child: Column(
+              child: Row(
                 children: [],
               ),
             ),

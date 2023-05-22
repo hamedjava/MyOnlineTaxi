@@ -13,7 +13,7 @@ class _IndexState extends State<Index> {
   TextEditingController search = TextEditingController();
   //final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   String textBtn = "انتخاب مبدا";
-  bool find_driver = false;
+  bool finddriver = false;
   String mabda = "";
   String destination = "";
 
