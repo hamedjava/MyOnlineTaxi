@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:location_picker_flutter_map/location_picker_flutter_map.dart';
+import 'package:online_taxi/view/components/form/custom_textformfield.dart';
 
 class FindDriver extends StatefulWidget {
   const FindDriver({super.key});
@@ -9,13 +10,14 @@ class FindDriver extends StatefulWidget {
 }
 
 class _FindDriverState extends State<FindDriver> {
+  TextEditingController driverMessage = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomSheet: Container(
         color: Colors.black87,
         width: MediaQuery.of(context).size.width,
-        height: 200,
+        height: 350,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
@@ -61,17 +63,97 @@ class _FindDriverState extends State<FindDriver> {
                 ],
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
-                children: [],
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 80.0),
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.call,
+                        color: Colors.red,
+                      ),
+                      iconSize: 30,
+                    ),
+                  ),
+                  CustomTextField(
+                    title: "ارسال پیام به راننده...",
+                    hintColor: Colors.white,
+                    controller: driverMessage,
+                    textColor: Colors.white,
+                    labelStyleColor: Colors.white,
+                    helperStyleColor: Colors.white,
+                    textDirection: TextDirection.rtl,
+                    borderColor: Colors.white,
+                    errorColor: Colors.red,
+                    prefixIcon: const Icon(Icons.message),
+                    validator: (p0) => "",
+                  ),
+                ],
               ),
             ),
             const Padding(
-              padding: EdgeInsets.all(2.0),
+              padding: EdgeInsets.all(16.0),
               child: Row(
-                children: [],
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(3.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(1.0),
+                          child: Icon(
+                            Icons.arrow_back,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(1.0),
+                          child: Text(
+                            "موجودی کافی",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(3.0),
+                    child: Column(
+                      children: [
+                        Text(
+                          "کیف پول",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        Text(
+                          "هزینه سفر : 20000تومان",
+                          style: TextStyle(color: Colors.white),
+                          textDirection: TextDirection.rtl,
+                        )
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(3.0),
+                    child: Column(
+                      children: [
+                        Icon(
+                          Icons.wallet,
+                          color: Colors.blue,
+                        )
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

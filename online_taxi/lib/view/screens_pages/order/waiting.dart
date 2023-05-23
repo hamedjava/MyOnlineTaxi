@@ -13,13 +13,13 @@ class _WaitingState extends State<Waiting> {
   @override
   void initState() {
     super.initState();
-    find_driver = true;
+    finddriver = true;
     setState(() {
       Navigator.pushNamed(context, MyRoutes.findDriver);
     });
   }
 
-  bool find_driver = false;
+  bool finddriver = false;
 
   @override
   Widget build(BuildContext context) {

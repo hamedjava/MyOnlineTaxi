@@ -2,14 +2,33 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class CustomTextField extends StatefulWidget {
-  CustomTextField(
-      {super.key,
-      required this.title,
-      required this.controller,
-      required this.validator});
+  CustomTextField({
+    super.key,
+    required this.title,
+    required this.controller,
+    required this.validator,
+    this.textColor,
+    this.prefixIcon,
+    this.postFixIcon,
+    this.borderColor,
+    this.hintColor,
+    this.helperStyleColor,
+    this.labelStyleColor,
+    this.errorColor,
+    this.textDirection,
+  });
   final String title;
   final String? Function(String?) validator;
   TextEditingController controller = TextEditingController();
+  Color? textColor,
+      borderColor,
+      hintColor,
+      helperStyleColor,
+      labelStyleColor,
+      errorColor;
+  TextDirection? textDirection;
+  Icon? prefixIcon, postFixIcon;
+  String? helperText;
 
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();
@@ -27,35 +46,33 @@ class _CustomTextFieldState extends State<CustomTextField> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
-              style: const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
+              style: TextStyle(color: widget.textColor),
               controller: widget.controller,
               validator: widget.validator,
+              textDirection: widget.textDirection,
               decoration: InputDecoration(
-                hintText: widget.title,
                 labelText: widget.title,
-                prefixIcon: const Icon(
-                  Icons.search,
-                  color: Colors.red,
+                suffixIcon: widget.prefixIcon,
+                hintTextDirection: widget.textDirection,
+                floatingLabelAlignment: FloatingLabelAlignment.center,
+                enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: widget.borderColor as Color)),
+                errorBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: widget.errorColor as Color)),
+                helperText: widget.helperText,
+                helperStyle: TextStyle(color: widget.helperStyleColor),
+                labelStyle: TextStyle(
+                  color: widget.labelStyleColor,
                 ),
-                enabledBorder: const UnderlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Color.fromARGB(255, 0, 0, 0))),
-                errorBorder: const UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.redAccent)),
-                helperText: 'example@gmail.com',
-                helperStyle:
-                    const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
-                labelStyle:
-                    const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
-                hintStyle: const TextStyle(
-                  color: Color.fromARGB(255, 0, 0, 0),
+                hintStyle: TextStyle(
+                  color: widget.textColor,
                 ),
-                border: const UnderlineInputBorder(
+                border: UnderlineInputBorder(
                     borderSide: BorderSide(
                         width: 1,
                         style: BorderStyle.solid,
-                        color: Color.fromARGB(255, 0, 0, 0)),
-                    borderRadius: BorderRadius.all(Radius.circular(8))),
+                        color: widget.borderColor as Color),
+                    borderRadius: const BorderRadius.all(Radius.circular(8))),
               ),
             ),
           ),
